@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="splash-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e1f5fe" />
+      <stop offset="100%" stop-color="#b3e5fc" />
+    </linearGradient>
+    <radialGradient id="splash-center" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#4dabf7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f4c81" stop-opacity="0.4" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Water background -->
+  <rect x="0" y="0" width="800" height="500" fill="url(#splash-bg)" />
+  
+  <!-- Splash center -->
+  <circle cx="400" cy="250" r="80" fill="url(#splash-center)" />
+  
+  <!-- Splash droplets -->
+  <path d="M 400,170 C 420,150 450,160 460,130 C 470,100 450,80 420,100 C 390,80 370,100 380,130 C 390,160 380,150 400,170 Z" fill="#4dabf7" />
+  <path d="M 450,210 C 480,200 500,220 520,200 C 540,180 520,160 490,180 C 460,160 440,180 460,200 C 470,220 430,220 450,210 Z" fill="#4dabf7" transform="rotate(20, 400, 250)" />
+  <path d="M 350,210 C 320,200 300,220 280,200 C 260,180 280,160 310,180 C 340,160 360,180 340,200 C 330,220 370,220 350,210 Z" fill="#4dabf7" transform="rotate(-20, 400, 250)" />
+  <path d="M 400,330 C 420,350 450,340 460,370 C 470,400 450,420 420,400 C 390,420 370,400 380,370 C 390,340 380,350 400,330 Z" fill="#4dabf7" transform="rotate(180, 400, 250)" />
+  
+  <!-- Small water droplets -->
+  <circle cx="350" cy="150" r="10" fill="#81d4fa" />
+  <circle cx="450" cy="150" r="8" fill="#81d4fa" />
+  <circle cx="330" cy="300" r="12" fill="#81d4fa" />
+  <circle cx="470" cy="300" r="9" fill="#81d4fa" />
+  <circle cx="500" cy="250" r="7" fill="#81d4fa" />
+  <circle cx="300" cy="250" r="8" fill="#81d4fa" />
+  
+  <!-- Ripple effects -->
+  <circle cx="400" cy="250" r="120" fill="none" stroke="#4dabf7" stroke-width="2" stroke-opacity="0.5" />
+  <circle cx="400" cy="250" r="160" fill="none" stroke="#4dabf7" stroke-width="1.5" stroke-opacity="0.3" />
+  <circle cx="400" cy="250" r="200" fill="none" stroke="#4dabf7" stroke-width="1" stroke-opacity="0.2" />
+</svg> 

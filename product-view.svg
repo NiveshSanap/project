@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#bg-gradient)" />
+  
+  <!-- Product Platform -->
+  <ellipse cx="400" cy="380" rx="250" ry="40" fill="#cbd5e0" />
+  <ellipse cx="400" cy="380" rx="220" ry="30" fill="#e2e8f0" />
+  
+  <!-- Main Product Components -->
+  <g transform="translate(400, 300)">
+    <!-- Main valve body -->
+    <g transform="rotate(-15)">
+      <!-- Valve body -->
+      <rect x="-80" y="-30" width="160" height="60" rx="10" ry="10" fill="#0f4c81" filter="drop-shadow(0 5px 5px rgba(0,0,0,0.2))" />
+      <rect x="-75" y="-25" width="150" height="50" rx="8" ry="8" fill="#4dabf7" />
+      
+      <!-- Valve ports -->
+      <rect x="-110" y="-10" width="30" height="20" rx="5" ry="5" fill="#0f4c81" />
+      <rect x="80" y="-10" width="30" height="20" rx="5" ry="5" fill="#0f4c81" />
+      
+      <circle cx="-95" cy="0" r="8" fill="#78909c" />
+      <circle cx="95" cy="0" r="8" fill="#78909c" />
+      
+      <!-- Valve handle -->
+      <rect x="-10" y="-80" width="20" height="50" fill="#0f4c81" />
+      <circle cx="0" cy="-80" r="20" fill="#0f4c81" />
+      <circle cx="0" cy="-80" r="15" fill="#4dabf7" />
+      
+      <!-- Branding -->
+      <text x="0" y="10" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="16" fill="#f8fafc">AQUALINK</text>
+    </g>
+  </g>
+  
+  <!-- Electronic control unit -->
+  <g transform="translate(200, 250)">
+    <!-- Controller box -->
+    <rect x="0" y="0" width="100" height="120" rx="5" ry="5" fill="#0f4c81" filter="drop-shadow(0 5px 5px rgba(0,0,0,0.2))" />
+    <rect x="5" y="5" width="90" height="110" rx="3" ry="3" fill="#4dabf7" />
+    
+    <!-- Display -->
+    <rect x="10" y="15" width="80" height="40" rx="2" ry="2" fill="#f8fafc" />
+    <text x="50" y="35" text-anchor="middle" font-family="Arial" font-size="10" fill="#0f4c81">AquaLink</text>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial" font-size="8" fill="#0f4c81">Smart Valve</text>
+    
+    <!-- Control buttons -->
+    <circle cx="30" cy="75" r="10" fill="#0f4c81" />
+    <circle cx="70" cy="75" r="10" fill="#0f4c81" />
+    
+    <text x="30" y="78" text-anchor="middle" font-family="Arial" font-size="10" fill="#f8fafc">ON</text>
+    <text x="70" y="78" text-anchor="middle" font-family="Arial" font-size="10" fill="#f8fafc">OFF</text>
+    
+    <!-- Status LEDs -->
+    <circle cx="20" cy="100" r="3" fill="#47d147" />
+    <circle cx="35" cy="100" r="3" fill="#ff6666" />
+    <circle cx="50" cy="100" r="3" fill="#ffcc00" />
+    
+    <!-- Connection terminals -->
+    <rect x="70" y="95" width="20" height="10" fill="#0f4c81" />
+    <rect x="72" y="97" width="16" height="6" fill="#f8fafc" />
+  </g>
+  
+  <!-- Connection cable -->
+  <path d="M 290 300 C 310 300, 320 250, 350 270 C 380 290, 400 280, 380 240" fill="none" stroke="#343a40" stroke-width="3" />
+  
+  <!-- Water inlet pipe -->
+  <path d="M 300 0 L 300 100 C 300 120, 320 150, 320 180 C 320 210, 300 240, 310 270" fill="none" stroke="#78909c" stroke-width="15" stroke-linecap="round" />
+  <path d="M 300 0 L 300 100 C 300 120, 320 150, 320 180 C 320 210, 300 240, 310 270" fill="none" stroke="#b0bec5" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Water outlet pipe -->
+  <path d="M 500 0 L 500 100 C 500 120, 480 150, 480 180 C 480 210, 500 240, 490 270" fill="none" stroke="#78909c" stroke-width="15" stroke-linecap="round" />
+  <path d="M 500 0 L 500 100 C 500 120, 480 150, 480 180 C 480 210, 500 240, 490 270" fill="none" stroke="#b0bec5" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Water flow indicators (when active) -->
+  <g transform="translate(310, 120)">
+    <circle cx="0" cy="0" r="3" fill="#4dabf7" opacity="0.8" />
+    <circle cx="0" cy="20" r="3" fill="#4dabf7" opacity="0.7" />
+    <circle cx="0" cy="40" r="3" fill="#4dabf7" opacity="0.6" />
+    <circle cx="0" cy="60" r="3" fill="#4dabf7" opacity="0.5" />
+    <circle cx="0" cy="80" r="3" fill="#4dabf7" opacity="0.4" />
+    <circle cx="0" cy="100" r="3" fill="#4dabf7" opacity="0.3" />
+  </g>
+  
+  <g transform="translate(490, 120)">
+    <circle cx="0" cy="0" r="3" fill="#4dabf7" opacity="0.8" />
+    <circle cx="0" cy="20" r="3" fill="#4dabf7" opacity="0.7" />
+    <circle cx="0" cy="40" r="3" fill="#4dabf7" opacity="0.6" />
+    <circle cx="0" cy="60" r="3" fill="#4dabf7" opacity="0.5" />
+    <circle cx="0" cy="80" r="3" fill="#4dabf7" opacity="0.4" />
+    <circle cx="0" cy="100" r="3" fill="#4dabf7" opacity="0.3" />
+  </g>
+  
+  <!-- Product name and tagline -->
+  <text x="400" y="450" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="24" fill="#0f4c81">AquaLink Smart Valve Kit</text>
+  <text x="400" y="475" text-anchor="middle" font-family="Arial" font-size="16" fill="#475569">Precision Water Control</text>
+  
+  <!-- Highlight effects -->
+  <ellipse cx="380" cy="250" rx="20" ry="10" fill="white" opacity="0.3" />
+  <ellipse cx="420" cy="270" rx="25" ry="12" fill="white" opacity="0.2" />
+</svg> 

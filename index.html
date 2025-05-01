@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaLink Pro - Smart Water Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="AquaLink Pro - Advanced water management system for remote control via phone or SMS. Affordable smart solution at ₹1,699.">
+    <style>
+        :root {
+            --primary: #03a9f4;
+            --primary-dark: #0288d1;
+            --primary-light: #b3e5fc;
+            --accent: #ff6d00;
+            --text-dark: #263238;
+            --text-light: #607d8b;
+            --background: #ffffff;
+            --background-alt: #f5f7fa;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --error: #f44336;
+        }
+        
+        [data-theme="dark"] {
+            --primary: #29b6f6;
+            --primary-dark: #0277bd;
+            --primary-light: #4fc3f7;
+            --accent: #ff9e40;
+            --text-dark: #e0e0e0;
+            --text-light: #b0bec5;
+            --background: #121212;
+            --background-alt: #1e1e1e;
+            --success: #66bb6a;
+            --warning: #ffa726;
+            --error: #ef5350;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-dark);
+            background-color: var(--background);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
+        }
+        
+        .top-announcement {
+            background: linear-gradient(90deg, var(--accent), #ff9e40);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        header {
+            background-color: var(--background);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            color: var(--primary-dark);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(3, 169, 244, 0.9), rgba(2, 136, 209, 0.85)), url('assets/images/water-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 8px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .hero-price {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 15px 25px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        .price-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .discount-badge {
+            background-color: var(--accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 15px;
+            position: relative;
+            top: -2px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-dark);
+        }
+        
+        .features-section {
+            padding: 100px 0;
+            background-color: var(--background-alt);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--primary-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 28px;
+            color: var(--primary-dark);
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .feature-description {
+            color: var(--text-light);
+            flex-grow: 1;
+        }
+        
+        .testimonial-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .testimonial-card {
+            background-color: var(--background-alt);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+        
+        .author-title {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-price {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        .footer-about {
+            max-width: 300px;
+        }
+        
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-about, .footer-links {
+                max-width: 100%;
+            }
+        }
+        
+        /* Hidden form for Netlify */
+        .hidden-form {
+            display: none;
+        }
+        
+        /* Add modern highlights */
+        .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        
+        .highlight-badge i {
+            margin-right: 8px;
+        }
+        
+        .feature-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+        }
+        
+        .stat-value {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        
+        .benefits-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .benefit-content h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            color: var(--text-dark);
+        }
+        
+        .benefit-content p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        
+        .testimonial-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--background-alt);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+        }
+
+        .cta-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .top-announcement i {
+            margin-right: 8px;
+        }
+        
+        /* Mobile Navigation Styles */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            nav ul li a {
+                font-size: 18px;
+            }
+        }
+        
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        .theme-toggle i {
+            font-size: 20px;
+            color: var(--primary);
+        }
+        
+        /* Header adjustments for theme toggle */
+        .header-controls {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hidden Netlify Forms for pre-rendering -->
+    <form name="order" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <textarea name="address"></textarea>
+        <select name="quantity"></select>
+        <select name="payment_method"></select>
+        <input name="bot-field" />
+    </form>
+    
+    <div class="top-announcement">
+        <i class="fas fa-tags"></i> Limited Time Offer | 30% OFF - Save ₹800 Today
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-tint"></i> AquaLink Pro
+                </a>
+                
+                <div class="header-controls">
+                    <div class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    
+                    <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                        <li><a href="#specs">Specifications</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact" class="btn btn-sm">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-bolt"></i> Innovative Technology</div>
+                    <h1>Smart Water Management Made Simple</h1>
+                    <p>Control your water supply from anywhere with a simple phone call or SMS. Save water, save electricity, save money with AquaLink Pro.</p>
+                    <div class="hero-price">
+                        <span class="price-original">₹2,499</span>
+                        <span class="price-value">₹1,699</span>
+                        <span class="discount-badge">30% OFF</span>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#features" class="btn">Explore Features</a>
+                        <a href="#pricing" class="btn btn-outline">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-check-circle"></i> Why Choose AquaLink Pro</div>
+                    <h2 class="section-title">Smart Solution for Water Management</h2>
+                    <p class="section-subtitle">Our innovative water management system provides complete control and significant savings</p>
+                </div>
+                
+                <div class="feature-grid-3">
+                    <div class="stat-card">
+                        <div class="stat-value">40%</div>
+                        <div class="stat-label">Potential Water Savings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Remote Accessibility</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">5min</div>
+                        <div class="stat-label">Quick Installation</div>
+                    </div>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Reduce Water Wastage</h3>
+                            <p>Control water flow precisely to ensure not a single drop is wasted when not needed.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Save on Electricity</h3>
+                            <p>Turn off water pumps remotely to prevent them from running unnecessarily.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Prevent Damage</h3>
+                            <p>Stop water flow immediately in case of leaks or emergencies from anywhere.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Save Time</h3>
+                            <p>No more manual trips to turn water on or off - control everything remotely.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-star"></i> Key Features</div>
+                    <h2 class="section-title">Smart Features You'll Love</h2>
+                    <p class="section-subtitle">AquaLink Pro combines advanced technology with simplicity to give you complete control over your water systems.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Instant Response</h3>
+                        <p class="feature-description">Control water flow instantly with immediate response times, ensuring you never waste a drop.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Phone Control</h3>
+                        <p class="feature-description">Manage your water system from anywhere using simple phone calls or SMS commands. No smartphone required.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="feature-title">Easy Setup</h3>
+                        <p class="feature-description">Install in minutes with our comprehensive guide and all necessary hardware included in the package.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Precise Timing</h3>
+                        <p class="feature-description">Set exact durations for water flow with accuracy down to the second, perfect for irrigation and more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works-section" style="background-color: white; padding: 100px 0;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-play-circle"></i> How It Works</div>
+                    <h2 class="section-title">Simple Setup, Powerful Control</h2>
+                    <p class="section-subtitle">Get started with AquaLink Pro in just a few simple steps</p>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 40px; gap: 30px;">
+                    <div style="flex: 1 1 300px; text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--primary-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-box-open" style="font-size: 32px; color: var(--primary);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-size: 20px;">1. Install the Device</h3>
+                        <p style="color: var(--text-light);">Connect the AquaLink Pro valve to your water line using the included fittings. No special tools required.</p>
+                    </div>
+                    
+                    <div style="flex: 1 1 300px; text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--primary-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-sim-card" style="font-size: 32px; color: var(--primary);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-size: 20px;">2. Insert SIM Card</h3>
+                        <p style="color: var(--text-light);">Insert any standard SIM card into the device and power it on using the included adapter.</p>
+                    </div>
+                    
+                    <div style="flex: 1 1 300px; text-align: center; padding: 20px;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background-color: var(--primary-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-mobile-alt" style="font-size: 32px; color: var(--primary);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 15px; font-size: 20px;">3. Control Remotely</h3>
+                        <p style="color: var(--text-light);">Use simple SMS commands or phone calls to control your water valve from anywhere, anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specs" class="specs-section" style="background-color: var(--background-alt); padding: 100px 0;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-clipboard-list"></i> Product Specifications</div>
+                    <h2 class="section-title">Technical Details</h2>
+                    <p class="section-subtitle">Everything you need to know about the AquaLink Pro system</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div style="background-color: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--primary);">Physical Specifications</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Dimensions:</span> 
+                                <span>120mm × 85mm × 45mm</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Weight:</span> 
+                                <span>350g</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Valve Material:</span> 
+                                <span>Brass with Chrome Plating</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Housing:</span> 
+                                <span>ABS Plastic (IP65 Rated)</span>
+                            </li>
+                            <li style="padding: 10px 0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Connections:</span> 
+                                <span>1/2" or 3/4" BSP</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--primary);">Electrical Specifications</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Power Supply:</span> 
+                                <span>DC 12V, 2A Adapter</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Battery Backup:</span> 
+                                <span>Li-ion 2600mAh (8 hours)</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Power Usage:</span> 
+                                <span>< 3W (standby), < 8W (active)</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Operating Temp:</span> 
+                                <span>-10°C to 55°C</span>
+                            </li>
+                            <li style="padding: 10px 0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Humidity:</span> 
+                                <span>≤ 95% non-condensing</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: white; border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--primary);">Network & Control</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Network:</span> 
+                                <span>GSM 850/900/1800/1900MHz</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">SIM Card:</span> 
+                                <span>Standard SIM (not included)</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Control Methods:</span> 
+                                <span>SMS, Voice Call</span>
+                            </li>
+                            <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Response Time:</span> 
+                                <span>< 3 seconds</span>
+                            </li>
+                            <li style="padding: 10px 0;">
+                                <span style="font-weight: 600; display: inline-block; width: 140px;">Max. Users:</span> 
+                                <span>5 authorized phone numbers</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="use-cases" class="use-cases-section" style="background-color: var(--background-alt);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-lightbulb"></i> Use Cases</div>
+                    <h2 class="section-title">Perfect Solution For Many Applications</h2>
+                    <p class="section-subtitle">AquaLink Pro is designed to solve water management challenges across different scenarios</p>
+                </div>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <h3 style="margin-bottom: 12px;"><i class="fas fa-seedling" style="color: var(--accent); margin-right: 8px;"></i> Agriculture</h3>
+                            <p>Ideal for farmers who need to control irrigation systems remotely. Set specific schedules, turn water on/off from anywhere, and save trips to the field.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <h3 style="margin-bottom: 12px;"><i class="fas fa-building" style="color: var(--accent); margin-right: 8px;"></i> Residential Buildings</h3>
+                            <p>Perfect for apartment complexes to manage water supply efficiently. Building managers can control water flow to different areas when needed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <h3 style="margin-bottom: 12px;"><i class="fas fa-home" style="color: var(--accent); margin-right: 8px;"></i> Vacation Homes</h3>
+                            <p>Secure your vacation property by controlling water supply remotely. Prevent potential leaks and water damage when you're away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="highlight-badge" style="background: rgba(255,255,255,0.2); color: white;"><i class="fas fa-tags"></i> Limited Offer</div>
+                    <h2 class="cta-title">Special Promotional Pricing</h2>
+                    <p class="cta-description">Get the AquaLink Pro Smart Valve for just ₹1,699 instead of ₹2,499. Limited units available at this price.</p>
+                    
+                    <div class="cta-card">
+                        <div class="cta-price">
+                            <span class="price-original">₹2,499</span>
+                            <span class="price-value">₹1,699</span>
+                            <span class="discount-badge">30% OFF</span>
+                        </div>
+                        <ul style="text-align: left; margin: 20px 0; color: var(--text-dark);">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> Full product warranty for 1 year</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> Free installation guide and support</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> All necessary components included</li>
+                            <li><i class="fas fa-check" style="color: var(--accent); margin-right: 8px;"></i> Free shipping across India</li>
+                        </ul>
+                        <a href="#pricing" class="btn" style="width: 100%;">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section" style="padding: 100px 0; background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-question-circle"></i> FAQ</div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about the AquaLink Pro system</p>
+                </div>
+                
+                <div style="max-width: 800px; margin: 40px auto 0;">
+                    <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="background-color: var(--primary-light); padding: 15px 20px; cursor: pointer;">
+                            <h3 style="font-size: 18px; margin: 0; display: flex; justify-content: space-between; color: var(--primary-dark);">
+                                How does AquaLink Pro work?
+                                <i class="fas fa-chevron-down"></i>
+                            </h3>
+                        </div>
+                        <div style="padding: 20px; background-color: white;">
+                            <p style="margin: 0; color: var(--text-light);">AquaLink Pro uses GSM technology to receive commands via SMS or phone calls. The system is connected to your water line and can control water flow remotely. When you send a command, the device processes it and activates the motorized valve accordingly.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="background-color: var(--primary-light); padding: 15px 20px; cursor: pointer;">
+                            <h3 style="font-size: 18px; margin: 0; display: flex; justify-content: space-between; color: var(--primary-dark);">
+                                Do I need a smartphone to use AquaLink Pro?
+                                <i class="fas fa-chevron-down"></i>
+                            </h3>
+                        </div>
+                        <div style="padding: 20px; background-color: white;">
+                            <p style="margin: 0; color: var(--text-light);">No, you don't need a smartphone. AquaLink Pro works with any basic phone that can make calls or send SMS messages. This makes it accessible to everyone, regardless of technology sophistication.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="background-color: var(--primary-light); padding: 15px 20px; cursor: pointer;">
+                            <h3 style="font-size: 18px; margin: 0; display: flex; justify-content: space-between; color: var(--primary-dark);">
+                                Is installation difficult?
+                                <i class="fas fa-chevron-down"></i>
+                            </h3>
+                        </div>
+                        <div style="padding: 20px; background-color: white;">
+                            <p style="margin: 0; color: var(--text-light);">Installation is very straightforward and typically takes less than 5 minutes. The package includes all necessary fittings and an illustrated installation guide. If you can attach a garden hose, you can install AquaLink Pro.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="background-color: var(--primary-light); padding: 15px 20px; cursor: pointer;">
+                            <h3 style="font-size: 18px; margin: 0; display: flex; justify-content: space-between; color: var(--primary-dark);">
+                                What happens if there's a power outage?
+                                <i class="fas fa-chevron-down"></i>
+                            </h3>
+                        </div>
+                        <div style="padding: 20px; background-color: white;">
+                            <p style="margin: 0; color: var(--text-light);">AquaLink Pro comes with a built-in rechargeable battery backup that provides up to 8 hours of continuous operation during power outages. The valve will maintain its last state until power is restored.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="background-color: var(--primary-light); padding: 15px 20px; cursor: pointer;">
+                            <h3 style="font-size: 18px; margin: 0; display: flex; justify-content: space-between; color: var(--primary-dark);">
+                                Is there a warranty?
+                                <i class="fas fa-chevron-down"></i>
+                            </h3>
+                        </div>
+                        <div style="padding: 20px; background-color: white;">
+                            <p style="margin: 0; color: var(--text-light);">Yes, AquaLink Pro comes with a 1-year manufacturer's warranty covering all defects in materials and workmanship. We also offer extended warranty options for additional peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="installation-section" style="padding: 100px 0; background-color: var(--background-alt);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-tools"></i> Installation</div>
+                    <h2 class="section-title">Easy Setup Process</h2>
+                    <p class="section-subtitle">Get your AquaLink Pro up and running in minutes</p>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; align-items: center; justify-content: center;">
+                    <div style="flex: 1 1 400px;">
+                        <h3 style="margin-bottom: 20px; font-size: 22px;">Simple Installation Steps</h3>
+                        <ol style="padding-left: 20px; color: var(--text-light);">
+                            <li style="margin-bottom: 15px;">Turn off your main water supply</li>
+                            <li style="margin-bottom: 15px;">Connect the AquaLink Pro valve to your water line using the provided fittings</li>
+                            <li style="margin-bottom: 15px;">Insert a standard SIM card into the device</li>
+                            <li style="margin-bottom: 15px;">Connect the power adapter and turn on the device</li>
+                            <li style="margin-bottom: 15px;">Send a test SMS command to verify operation</li>
+                            <li>Begin controlling your water supply remotely</li>
+                        </ol>
+                        <p style="margin-top: 20px; color: var(--text-light);">A detailed installation guide is included in the package. You can also watch our installation video for step-by-step instructions.</p>
+                        <a href="#" class="btn" style="margin-top: 20px;"><i class="fas fa-play-circle" style="margin-right: 8px;"></i> Watch Installation Video</a>
+                    </div>
+                    
+                    <div style="flex: 1 1 400px; text-align: center;">
+                        <img src="assets/images/valve-installation.svg" alt="Installation Diagram" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" style="padding: 100px 0; background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="highlight-badge"><i class="fas fa-envelope"></i> Contact Us</div>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Have questions? We're here to help you with any inquiries</p>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
+                    <div style="flex: 1 1 400px;">
+                        <h3 style="margin-bottom: 20px; font-size: 22px;">Contact Information</h3>
+                        <div style="margin-bottom: 20px;">
+                            <p style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-map-marker-alt" style="width: 24px; color: var(--primary); margin-right: 10px;"></i>
+                                <span>123 Water Tech Street, Hydro City, 400001</span>
+                            </p>
+                            <p style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-phone" style="width: 24px; color: var(--primary); margin-right: 10px;"></i>
+                                <span>+91 98765 43210</span>
+                            </p>
+                            <p style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-envelope" style="width: 24px; color: var(--primary); margin-right: 10px;"></i>
+                                <span>info@aqualink-pro.com</span>
+                            </p>
+                            <p style="display: flex; align-items: center;">
+                                <i class="fas fa-clock" style="width: 24px; color: var(--primary); margin-right: 10px;"></i>
+                                <span>Mon-Sat: 9:00 AM - 6:00 PM</span>
+                            </p>
+                        </div>
+                        
+                        <h3 style="margin: 30px 0 20px; font-size: 22px;">Follow Us</h3>
+                        <div style="display: flex; gap: 15px;">
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s;">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1 1 400px;">
+                        <form name="contact" method="POST" data-netlify="true" style="background-color: var(--background-alt); padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                            <div style="margin-bottom: 20px;">
+                                <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500;">Your Name</label>
+                                <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500;">Email Address</label>
+                                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label for="subject" style="display: block; margin-bottom: 8px; font-weight: 500;">Subject</label>
+                                <input type="text" id="subject" name="subject" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500;">Message</label>
+                                <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; resize: vertical;"></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add back to top button before footer -->
+    <a href="#" id="back-to-top" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-tint"></i> AquaLink Pro
+                    </div>
+                    <p>Advanced water management solutions designed to make your life easier and help conserve water resources.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#specs">Specifications</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#installation">Installation Guide</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="year"></span> AquaLink Pro Water Control Systems. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileNavToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                const isOpen = navMenu.classList.contains('active');
+                mobileNavToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                mobileNavToggle.setAttribute('aria-expanded', isOpen);
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    mobileNavToggle.setAttribute('aria-expanded', false);
+                });
+            });
+        });
+        
+        // Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            
+            // Check for saved user preference
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            htmlElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+            
+            themeToggle.addEventListener('click', function() {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+            
+            function updateThemeIcon(theme) {
+                themeToggle.innerHTML = theme === 'light' 
+                    ? '<i class="fas fa-moon"></i>' 
+                    : '<i class="fas fa-sun"></i>';
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-section .testimonial-card div:first-child');
+        
+        faqItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Check if item is already active
+                const isActive = content.style.display === 'block';
+                
+                // Close all items
+                document.querySelectorAll('.faq-section .testimonial-card div:nth-child(2)').forEach(el => {
+                    el.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-section .testimonial-card i').forEach(el => {
+                    el.className = 'fas fa-chevron-down';
+                });
+                
+                // If the clicked item wasn't active, open it
+                if (!isActive) {
+                    content.style.display = 'block';
+                    icon.className = 'fas fa-chevron-up';
+                }
+            });
+        });
+        
+        // Initialize - hide all content except first item
+        faqItems.forEach((item, index) => {
+            const content = item.nextElementSibling;
+            if (index === 0) {
+                content.style.display = 'block';
+                item.querySelector('i').className = 'fas fa-chevron-up';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.opacity = '1';
+                backToTopButton.style.visibility = 'visible';
+            } else {
+                backToTopButton.style.opacity = '0';
+                backToTopButton.style.visibility = 'hidden';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Sky background -->
+  <rect width="800" height="300" fill="#e1f5fe"/>
+  <rect width="800" height="200" y="300" fill="#a5d6a7"/>
+  
+  <!-- Sun -->
+  <circle cx="700" cy="80" r="40" fill="#ffeb3b"/>
+  <g transform="translate(700, 80)">
+    <line x1="-60" y1="0" x2="-45" y2="0" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="45" y1="0" x2="60" y2="0" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="-42" y1="-42" x2="-32" y2="-32" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="32" y1="-32" x2="42" y2="-42" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="0" y1="-60" x2="0" y2="-45" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="-42" y1="42" x2="-32" y2="32" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="32" y1="32" x2="42" y2="42" stroke="#ffeb3b" stroke-width="4"/>
+    <line x1="0" y1="45" x2="0" y2="60" stroke="#ffeb3b" stroke-width="4"/>
+  </g>
+  
+  <!-- Clouds -->
+  <g transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="20" fill="white"/>
+    <circle cx="20" cy="-10" r="25" fill="white"/>
+    <circle cx="40" cy="5" r="18" fill="white"/>
+    <circle cx="55" cy="-5" r="22" fill="white"/>
+  </g>
+  
+  <g transform="translate(500, 60)">
+    <circle cx="0" cy="0" r="15" fill="white"/>
+    <circle cx="15" cy="-8" r="18" fill="white"/>
+    <circle cx="30" cy="5" r="12" fill="white"/>
+    <circle cx="45" cy="-5" r="16" fill="white"/>
+  </g>
+  
+  <!-- Ground details -->
+  <rect width="800" height="2" y="300" fill="#8d6e63"/>
+  
+  <!-- Garden beds -->
+  <rect x="50" y="320" width="300" height="80" rx="5" ry="5" fill="#795548"/>
+  <rect x="400" y="320" width="300" height="80" rx="5" ry="5" fill="#795548"/>
+  <rect x="200" y="410" width="400" height="80" rx="5" ry="5" fill="#795548"/>
+  
+  <!-- Plants in first garden bed -->
+  <g transform="translate(80, 330)">
+    <!-- Plant stalks -->
+    <rect x="0" y="0" width="3" height="30" fill="#558b2f"/>
+    <rect x="20" y="0" width="3" height="40" fill="#558b2f"/>
+    <rect x="40" y="0" width="3" height="35" fill="#558b2f"/>
+    <rect x="60" y="0" width="3" height="30" fill="#558b2f"/>
+    <rect x="80" y="0" width="3" height="45" fill="#558b2f"/>
+    <rect x="100" y="0" width="3" height="35" fill="#558b2f"/>
+    <rect x="120" y="0" width="3" height="40" fill="#558b2f"/>
+    <rect x="140" y="0" width="3" height="30" fill="#558b2f"/>
+    <rect x="160" y="0" width="3" height="35" fill="#558b2f"/>
+    <rect x="180" y="0" width="3" height="45" fill="#558b2f"/>
+    <rect x="200" y="0" width="3" height="30" fill="#558b2f"/>
+    <rect x="220" y="0" width="3" height="40" fill="#558b2f"/>
+    <rect x="240" y="0" width="3" height="35" fill="#558b2f"/>
+    
+    <!-- Plant leaves -->
+    <ellipse cx="0" cy="-5" rx="8" ry="4" fill="#7cb342" transform="rotate(-30, 0, -5)"/>
+    <ellipse cx="20" cy="-10" rx="10" ry="5" fill="#7cb342" transform="rotate(-20, 20, -10)"/>
+    <ellipse cx="40" cy="-5" rx="8" ry="4" fill="#7cb342" transform="rotate(-35, 40, -5)"/>
+    <ellipse cx="60" cy="-8" rx="9" ry="4" fill="#7cb342" transform="rotate(-25, 60, -8)"/>
+    <ellipse cx="80" cy="-12" rx="11" ry="5" fill="#7cb342" transform="rotate(-30, 80, -12)"/>
+    <ellipse cx="100" cy="-7" rx="8" ry="4" fill="#7cb342" transform="rotate(-35, 100, -7)"/>
+    <ellipse cx="120" cy="-10" rx="9" ry="5" fill="#7cb342" transform="rotate(-20, 120, -10)"/>
+    <ellipse cx="140" cy="-5" rx="8" ry="4" fill="#7cb342" transform="rotate(-30, 140, -5)"/>
+    <ellipse cx="160" cy="-8" rx="9" ry="4" fill="#7cb342" transform="rotate(-25, 160, -8)"/>
+    <ellipse cx="180" cy="-12" rx="11" ry="5" fill="#7cb342" transform="rotate(-30, 180, -12)"/>
+    <ellipse cx="200" cy="-5" rx="8" ry="4" fill="#7cb342" transform="rotate(-35, 200, -5)"/>
+    <ellipse cx="220" cy="-10" rx="9" ry="5" fill="#7cb342" transform="rotate(-20, 220, -10)"/>
+    <ellipse cx="240" cy="-7" rx="8" ry="4" fill="#7cb342" transform="rotate(-30, 240, -7)"/>
+  </g>
+  
+  <!-- Plants in second garden bed -->
+  <g transform="translate(420, 330)">
+    <!-- Tomato plants -->
+    <g transform="translate(30, 0)">
+      <rect x="0" y="0" width="4" height="60" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="10" fill="#81c784"/>
+      <circle cx="-10" cy="20" r="8" fill="#e53935"/>
+      <circle cx="10" cy="15" r="8" fill="#e53935"/>
+      <circle cx="-5" cy="40" r="8" fill="#e53935"/>
+    </g>
+    
+    <g transform="translate(100, 0)">
+      <rect x="0" y="0" width="4" height="60" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="10" fill="#81c784"/>
+      <circle cx="-10" cy="20" r="8" fill="#e53935"/>
+      <circle cx="10" cy="15" r="8" fill="#e53935"/>
+      <circle cx="-5" cy="40" r="8" fill="#e53935"/>
+    </g>
+    
+    <g transform="translate(170, 0)">
+      <rect x="0" y="0" width="4" height="60" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="10" fill="#81c784"/>
+      <circle cx="-10" cy="20" r="8" fill="#e53935"/>
+      <circle cx="10" cy="15" r="8" fill="#e53935"/>
+      <circle cx="-5" cy="40" r="8" fill="#e53935"/>
+    </g>
+    
+    <g transform="translate(240, 0)">
+      <rect x="0" y="0" width="4" height="60" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="10" fill="#81c784"/>
+      <circle cx="-10" cy="20" r="8" fill="#e53935"/>
+      <circle cx="10" cy="15" r="8" fill="#e53935"/>
+      <circle cx="-5" cy="40" r="8" fill="#e53935"/>
+    </g>
+  </g>
+  
+  <!-- Plants in third garden bed -->
+  <g transform="translate(270, 420)">
+    <!-- Pepper plants -->
+    <g transform="translate(20, 0)">
+      <rect x="0" y="0" width="3" height="50" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="8" fill="#81c784"/>
+      <path d="M -5,15 Q -6,25 -2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <path d="M 5,15 Q 6,25 2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <ellipse cx="-2" cy="35" rx="4" ry="8" fill="#388e3c" transform="rotate(20, -2, 35)"/>
+      <ellipse cx="2" cy="35" rx="4" ry="8" fill="#7cb342" transform="rotate(-20, 2, 35)"/>
+    </g>
+    
+    <g transform="translate(80, 0)">
+      <rect x="0" y="0" width="3" height="50" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="8" fill="#81c784"/>
+      <path d="M -5,15 Q -6,25 -2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <path d="M 5,15 Q 6,25 2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <ellipse cx="-2" cy="35" rx="4" ry="8" fill="#388e3c" transform="rotate(20, -2, 35)"/>
+      <ellipse cx="2" cy="35" rx="4" ry="8" fill="#7cb342" transform="rotate(-20, 2, 35)"/>
+    </g>
+    
+    <g transform="translate(140, 0)">
+      <rect x="0" y="0" width="3" height="50" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="8" fill="#81c784"/>
+      <path d="M -5,15 Q -6,25 -2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <path d="M 5,15 Q 6,25 2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <ellipse cx="-2" cy="35" rx="4" ry="8" fill="#388e3c" transform="rotate(20, -2, 35)"/>
+      <ellipse cx="2" cy="35" rx="4" ry="8" fill="#7cb342" transform="rotate(-20, 2, 35)"/>
+    </g>
+    
+    <g transform="translate(200, 0)">
+      <rect x="0" y="0" width="3" height="50" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="8" fill="#81c784"/>
+      <path d="M -5,15 Q -6,25 -2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <path d="M 5,15 Q 6,25 2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <ellipse cx="-2" cy="35" rx="4" ry="8" fill="#388e3c" transform="rotate(20, -2, 35)"/>
+      <ellipse cx="2" cy="35" rx="4" ry="8" fill="#7cb342" transform="rotate(-20, 2, 35)"/>
+    </g>
+    
+    <g transform="translate(260, 0)">
+      <rect x="0" y="0" width="3" height="50" fill="#558b2f"/>
+      <circle cx="0" cy="-5" r="8" fill="#81c784"/>
+      <path d="M -5,15 Q -6,25 -2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <path d="M 5,15 Q 6,25 2,30" stroke="#558b2f" stroke-width="2" fill="none"/>
+      <ellipse cx="-2" cy="35" rx="4" ry="8" fill="#388e3c" transform="rotate(20, -2, 35)"/>
+      <ellipse cx="2" cy="35" rx="4" ry="8" fill="#7cb342" transform="rotate(-20, 2, 35)"/>
+    </g>
+  </g>
+  
+  <!-- Irrigation system -->
+  <!-- Main pipe -->
+  <rect x="50" y="290" width="700" height="10" fill="#78909c"/>
+  
+  <!-- Vertical pipes to beds -->
+  <rect x="100" y="300" width="10" height="20" fill="#78909c"/>
+  <rect x="300" y="300" width="10" height="20" fill="#78909c"/>
+  <rect x="450" y="300" width="10" height="20" fill="#78909c"/>
+  <rect x="650" y="300" width="10" height="20" fill="#78909c"/>
+  <rect x="400" y="400" width="10" height="10" fill="#78909c"/>
+  
+  <!-- Horizontal pipes in beds -->
+  <rect x="100" y="310" width="200" height="5" fill="#78909c"/>
+  <rect x="450" y="310" width="200" height="5" fill="#78909c"/>
+  <rect x="200" y="400" width="400" height="5" fill="#78909c"/>
+  
+  <!-- AquaLink controller -->
+  <rect x="20" y="250" width="50" height="60" rx="5" ry="5" fill="#0f4c81"/>
+  <rect x="25" y="255" width="40" height="50" rx="3" ry="3" fill="#4dabf7"/>
+  <text x="45" y="280" text-anchor="middle" font-family="Arial" font-size="8" fill="white">AquaLink</text>
+  <rect x="70" y="290" width="20" height="10" fill="#0f4c81"/>
+  
+  <!-- Water droplets -->
+  <g transform="translate(100, 315)">
+    <circle cx="10" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="30" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="50" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="70" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="90" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="110" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="130" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="150" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="170" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="190" cy="0" r="2" fill="#4dabf7"/>
+  </g>
+  
+  <g transform="translate(450, 315)">
+    <circle cx="10" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="30" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="50" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="70" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="90" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="110" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="130" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="150" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="170" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="190" cy="0" r="2" fill="#4dabf7"/>
+  </g>
+  
+  <g transform="translate(200, 405)">
+    <circle cx="20" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="60" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="100" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="140" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="180" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="220" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="260" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="300" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="340" cy="0" r="2" fill="#4dabf7"/>
+    <circle cx="380" cy="0" r="2" fill="#4dabf7"/>
+  </g>
+</svg> 

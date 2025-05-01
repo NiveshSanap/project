@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  
+  <!-- Wall -->
+  <rect x="100" y="50" width="600" height="400" rx="5" ry="5" fill="#e9ecef" stroke="#ced4da" stroke-width="2"/>
+  
+  <!-- Pipes -->
+  <rect x="200" y="200" width="400" height="40" fill="#6c757d"/>
+  <rect x="210" y="205" width="380" height="30" fill="#adb5bd"/>
+  
+  <!-- Valve body -->
+  <g transform="translate(350, 150)">
+    <!-- Main valve body -->
+    <rect x="-70" y="50" width="140" height="40" fill="#0f4c81" rx="5" ry="5"/>
+    <rect x="-65" y="55" width="130" height="30" fill="#4dabf7" rx="3" ry="3"/>
+    
+    <!-- Valve handle -->
+    <rect x="-10" y="0" width="20" height="50" fill="#0f4c81"/>
+    <circle cx="0" cy="0" r="15" fill="#0f4c81"/>
+    <circle cx="0" cy="0" r="10" fill="#4dabf7"/>
+    
+    <!-- Valve connections -->
+    <rect x="-100" y="60" width="30" height="20" fill="#6c757d"/>
+    <rect x="70" y="60" width="30" height="20" fill="#6c757d"/>
+  </g>
+  
+  <!-- Controller box -->
+  <g transform="translate(500, 110)">
+    <!-- Box body -->
+    <rect x="0" y="0" width="120" height="150" rx="5" ry="5" fill="#0f4c81" stroke="#0a3a6a" stroke-width="2"/>
+    <rect x="5" y="5" width="110" height="140" rx="3" ry="3" fill="#4dabf7" stroke="#0a3a6a" stroke-width="1"/>
+    
+    <!-- Display -->
+    <rect x="15" y="20" width="90" height="50" rx="2" ry="2" fill="#f8f9fa" stroke="#0a3a6a" stroke-width="1"/>
+    <text x="60" y="50" text-anchor="middle" font-family="Arial" font-size="12" fill="#0f4c81">AquaLink</text>
+    
+    <!-- Buttons -->
+    <circle cx="35" cy="100" r="10" fill="#0a3a6a"/>
+    <circle cx="65" cy="100" r="10" fill="#0a3a6a"/>
+    <circle cx="95" cy="100" r="10" fill="#0a3a6a"/>
+    
+    <!-- Status light -->
+    <circle cx="35" cy="130" r="5" fill="#47ff47"/>
+  </g>
+  
+  <!-- Wire from controller to valve -->
+  <path d="M 500 170 C 480 170, 450 150, 400 170 C 350 190, 330 170, 320 170" fill="none" stroke="#343a40" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Connect to pipe text -->
+  <text x="400" y="300" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#495057">Standard Pipe Connection</text>
+  
+  <!-- Installation person -->
+  <g transform="translate(170, 330)">
+    <!-- Person body -->
+    <circle cx="0" cy="-80" r="20" fill="#495057"/> <!-- head -->
+    <rect x="-15" y="-60" width="30" height="50" fill="#4dabf7"/> <!-- body -->
+    <rect x="-25" y="-10" width="15" height="40" fill="#343a40"/> <!-- left leg -->
+    <rect x="10" y="-10" width="15" height="40" fill="#343a40"/> <!-- right leg -->
+    
+    <!-- Arms working on the pipe -->
+    <rect x="-15" y="-50" width="10" height="30" fill="#4dabf7" transform="rotate(-30, -15, -50)"/> <!-- left arm -->
+    <rect x="15" y="-50" width="10" height="40" fill="#4dabf7" transform="rotate(45, 15, -50)"/> <!-- right arm -->
+    
+    <!-- Tool in hand -->
+    <rect x="40" y="-30" width="30" height="8" fill="#6c757d" transform="rotate(45, 40, -30)"/>
+  </g>
+</svg> 
